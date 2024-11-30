@@ -1,3 +1,6 @@
 <?php
-phpinfo(INFO_MODULES); // Outputs only information about modules
+ob_start();
+phpinfo();
+$output = ob_get_clean();
+echo "Output Size: " . strlen($output) . " bytes\n"; // Logs the size in bytes
 ?>
